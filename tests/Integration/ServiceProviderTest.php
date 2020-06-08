@@ -4,13 +4,10 @@
  *  *  * Copyright (C) OPTIMO TECHNOLOGIES  - All Rights Reserved
  *  *  * Unauthorized copying of this file, via any medium is strictly prohibited
  *  *  * Proprietary and confidential
- *  *  * Written by Sathish Kumar(satz) <sathish.thi@gmail.com>ManiKandan<smanikandanit@gmail.com >
- *  *
- *
+ *  *  * Written by Sathish Kumar(satz) <sathish.thi@gmail.com>ManiKandan<smanikandanit@gmail.com >.
  */
 
 namespace Optimoapps\RazorPayX\Tests\Integration;
-
 
 use Illuminate\Config\Repository;
 use Illuminate\Foundation\Application;
@@ -19,15 +16,10 @@ use OptimoApps\RazorPayX\RazorPayXServiceProvider;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Class ServiceProviderTest
- * @package Optimoapps\RazorPayX\Tests\Integration
+ * Class ServiceProviderTest.
  */
 class ServiceProviderTest extends TestCase
 {
-
-    /**
-     *
-     */
     public function testBootPublishesConfig(): void
     {
         $app = new Application();
@@ -40,16 +32,11 @@ class ServiceProviderTest extends TestCase
         self::assertCount(1, $serviceProvider::$publishes[RazorPayXServiceProvider::class]);
     }
 
-
-    /**
-     *
-     */
     public function testRegisterMakesRazorXAvailableInApp(): void
     {
         $app = new Application();
         $app->offsetSet('config', new Repository());
         $serviceProvider = new RazorPayXServiceProvider($app);
-
 
         $serviceProvider->register();
 
