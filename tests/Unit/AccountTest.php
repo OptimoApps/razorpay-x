@@ -4,13 +4,10 @@
  *  *  * Copyright (C) OPTIMO TECHNOLOGIES  - All Rights Reserved
  *  *  * Unauthorized copying of this file, via any medium is strictly prohibited
  *  *  * Proprietary and confidential
- *  *  * Written by Sathish Kumar(satz) <sathish.thi@gmail.com>ManiKandan<smanikandanit@gmail.com >
- *  *
- *
+ *  *  * Written by Sathish Kumar(satz) <sathish.thi@gmail.com>ManiKandan<smanikandanit@gmail.com >.
  */
 
 namespace OptimoApps\RazorPayX\Tests\Unit;
-
 
 use Illuminate\Contracts\Container\BindingResolutionException;
 use OptimoApps\RazorPayX\Entity\Account;
@@ -20,12 +17,10 @@ use OptimoApps\RazorPayX\RazorPayX;
 use OptimoApps\RazorPayX\Tests\TestCase;
 
 /**
- * Class AccountTest
- * @package OptimoApps\RazorPayX\Tests\Unit
+ * Class AccountTest.
  */
 class AccountTest extends TestCase
 {
-
     /**
      * @var mixed|RazorPayX
      */
@@ -83,5 +78,4 @@ class AccountTest extends TestCase
         $this->assertInstanceOf(Bank::class, $response->bank_account);
         $this->assertEquals('HDFC0000053', $response->bank_account->ifsc);
     }
-
 }
