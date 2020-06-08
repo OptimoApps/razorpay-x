@@ -1,4 +1,13 @@
 <?php
+/**
+ * *
+ *  *  * Copyright (C) OPTIMO TECHNOLOGIES  - All Rights Reserved
+ *  *  * Unauthorized copying of this file, via any medium is strictly prohibited
+ *  *  * Proprietary and confidential
+ *  *  * Written by Sathish Kumar(satz) <sathish.thi@gmail.com>ManiKandan<smanikandanit@gmail.com >
+ *  *
+ *
+ */
 
 namespace OptimoApps\RazorPayX;
 
@@ -17,7 +26,7 @@ class RazorPayXServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../config/config.php' => config_path('razorpay-x.php'),
+                __DIR__ . '/../config/config.php' => config_path('razorpay-x.php'),
             ], 'config');
         }
     }
@@ -28,11 +37,11 @@ class RazorPayXServiceProvider extends ServiceProvider
     public function register(): void
     {
         // Automatically apply the package configuration
-        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'razorpay-x');
+        $this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'razorpay-x');
 
         // Register the main class to use with the facade
         $this->app->singleton(RazorPayX::class, static function () {
-            return new RazorpayX(new ContactManager(), new AccountManager(), new PaymentManager(), new TransactionManager());
+            return new RazorPayX(new ContactManager(), new AccountManager(), new PaymentManager(), new TransactionManager());
         });
         $this->app->alias(RazorPayX::class, 'razorpay-x');
     }
