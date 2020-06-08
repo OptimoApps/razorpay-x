@@ -24,8 +24,8 @@
         "ext-json": "*"
     },
     "require-dev": {
-        "orchestra/testbench": "^4.0",
-        "phpunit/phpunit": "^9.0"
+        "orchestra/testbench": "4.*|5.*",
+        "phpunit/phpunit": "^8.4|^9.0"
     },
     "autoload": {
         "psr-4": {
