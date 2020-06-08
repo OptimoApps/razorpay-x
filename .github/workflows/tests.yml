@@ -35,8 +35,9 @@ jobs:
                     extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, intl, gd, exif, iconv
                     coverage: none
                 env:
-                    -   KEY_ID: ${{ secrets.KEY_ID }}
-                    -   KEY_SECRET:  ${{ secrets.KEY_SECRET }}
+                    KEY_ID: ${{ secrets.KEY_ID }}
+                    KEY_SECRET:  ${{ secrets.KEY_SECRET }}
+
             -   name: Install dependencies
                 run: |
                     composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
