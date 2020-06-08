@@ -13,6 +13,7 @@ namespace OptimoApps\RazorPayX\Tests\Unit;
 
 
 use OptimoApps\RazorPayX\Entity\Payment;
+use OptimoApps\RazorPayX\Enum\PaymentModeEnum;
 use OptimoApps\RazorPayX\RazorPayX;
 use OptimoApps\RazorPayX\Tests\TestCase;
 
@@ -26,19 +27,25 @@ class PaymentTest extends TestCase
         $this->razorPayX = app()->make(RazorPayX::class);
     }
 
-    /*  public function testCanCreatePayment()
-      {
-          $payment = new Payment();
-          $payment->account_number = '2323230002025787';
-          $payment->fund_account_id = 'fa_EzFCyMGCEwTgmS';
-          $payment->amount = 102;
-          $payment->currency = 'INR';
-          $payment->mode = PaymentModeEnum::IMPS;
-          $payment->purpose = 'payout';
-        //  $response = $this->razorPayX->payment()->create($payment);
+    /*
+     * @test
+     */
+    public function testCanCreatePayment()
+    {
+        $payment = new Payment();
+        $payment->account_number = '2323230002025787';
+        $payment->fund_account_id = 'fa_EzFCyMGCEwTgmS';
+        $payment->amount = 102;
+        $payment->currency = 'INR';
+        $payment->mode = PaymentModeEnum::IMPS;
+        $payment->purpose = 'payout';
+        $response = $this->razorPayX->payment()->create($payment);
+        $this->assertEquals('INR', $response->currency);
+    }
 
-      }*/
-
+    /*
+     * @test
+     */
     public function testCanFetchPayment()
     {
         $payment = new Payment();
@@ -48,6 +55,9 @@ class PaymentTest extends TestCase
         $this->assertIsArray($response->items);
     }
 
+    /*
+     * @test
+     */
     public function testCanFindPayment()
     {
         $response = $this->razorPayX->payment()->find('pout_Ezim1yeEp7oGif');

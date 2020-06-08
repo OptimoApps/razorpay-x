@@ -12,24 +12,37 @@
 namespace OptimoApps\RazorPayX\Tests\Unit;
 
 
-use Mockery;
+use Illuminate\Contracts\Container\BindingResolutionException;
 use OptimoApps\RazorPayX\Entity\Account;
 use OptimoApps\RazorPayX\Entity\Bank;
 use OptimoApps\RazorPayX\Enum\AccountTypeEnum;
 use OptimoApps\RazorPayX\RazorPayX;
 use OptimoApps\RazorPayX\Tests\TestCase;
 
+/**
+ * Class AccountTest
+ * @package OptimoApps\RazorPayX\Tests\Unit
+ */
 class AccountTest extends TestCase
 {
 
+    /**
+     * @var mixed|RazorPayX
+     */
     private RazorPayX $razorPayX;
 
+    /**
+     * @throws BindingResolutionException
+     */
     public function setUp(): void
     {
         parent::setUp();
-        $this->razorPayX = app()->make(RazorPayX::class);   //Mockery::mock(RazorPayX::class);
+        $this->razorPayX = app()->make(RazorPayX::class);
     }
 
+    /*
+     * @test
+     */
     public function testCanCreateBankAccount(): void
     {
         $bankAccount = new Bank();
@@ -46,6 +59,9 @@ class AccountTest extends TestCase
         $this->assertEquals(AccountTypeEnum::BANK_ACCOUNT, $response->account_type);
     }
 
+    /*
+     * @test
+     */
     public function testCanFetchAccount(): void
     {
         $account = new Account();
@@ -57,6 +73,9 @@ class AccountTest extends TestCase
         $this->assertEquals(1, $response->count);
     }
 
+    /*
+     * @test
+     */
     public function testCanFindAccount(): void
     {
         $response = $this->razorPayX->account()->find('fa_EzFCyMGCEwTgmS');
