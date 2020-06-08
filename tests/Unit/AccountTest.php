@@ -4,13 +4,10 @@
  *  *  * Copyright (C) OPTIMO TECHNOLOGIES  - All Rights Reserved
  *  *  * Unauthorized copying of this file, via any medium is strictly prohibited
  *  *  * Proprietary and confidential
- *  *  * Written by Sathish Kumar(satz) <sathish.thi@gmail.com>ManiKandan<smanikandanit@gmail.com >
- *  *
- *
+ *  *  * Written by Sathish Kumar(satz) <sathish.thi@gmail.com>ManiKandan<smanikandanit@gmail.com >.
  */
 
 namespace OptimoApps\RazorPayX\Tests\Unit;
-
 
 use Mockery;
 use OptimoApps\RazorPayX\Entity\Account;
@@ -21,7 +18,6 @@ use OptimoApps\RazorPayX\Tests\TestCase;
 
 class AccountTest extends TestCase
 {
-
     private RazorPayX $razorPayX;
 
     public function setUp(): void
@@ -64,5 +60,4 @@ class AccountTest extends TestCase
         $this->assertInstanceOf(Bank::class, $response->bank_account);
         $this->assertEquals('HDFC0000053', $response->bank_account->ifsc);
     }
-
 }

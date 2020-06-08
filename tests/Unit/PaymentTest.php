@@ -4,13 +4,10 @@
  *  *  * Copyright (C) OPTIMO TECHNOLOGIES  - All Rights Reserved
  *  *  * Unauthorized copying of this file, via any medium is strictly prohibited
  *  *  * Proprietary and confidential
- *  *  * Written by Sathish Kumar(satz) <sathish.thi@gmail.com>ManiKandan<smanikandanit@gmail.com >
- *  *
- *
+ *  *  * Written by Sathish Kumar(satz) <sathish.thi@gmail.com>ManiKandan<smanikandanit@gmail.com >.
  */
 
 namespace OptimoApps\RazorPayX\Tests\Unit;
-
 
 use OptimoApps\RazorPayX\Entity\Payment;
 use OptimoApps\RazorPayX\RazorPayX;
@@ -53,6 +50,4 @@ class PaymentTest extends TestCase
         $response = $this->razorPayX->payment()->find('pout_Ezim1yeEp7oGif');
         $this->assertEquals('INR', $response->currency);
     }
-
-
 }
