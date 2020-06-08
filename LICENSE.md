@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) satz
+Copyright (c) Optimo Technologies info@optimoapps
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
