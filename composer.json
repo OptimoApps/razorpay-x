@@ -1,0 +1,56 @@
+{
+    "name": "optimoapps/razorpay-x",
+    "description": "Razorpay X Payment gateway laravel package",
+    "keywords": [
+        "optimoapps",
+        "razorpay-x"
+    ],
+    "homepage": "https://github.com/optimoapps/razorpay-x",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "satz",
+            "email": "sathish.thi@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4",
+        "guzzlehttp/guzzle": "^6.5",
+        "illuminate/support": "^6.0|^7.0",
+        "json-mapper/json-mapper": "^1.1",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "OptimoApps\\RazorPayX\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "OptimoApps\\RazorPayX\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "OptimoApps\\RazorPayX\\RazorPayXServiceProvider"
+            ],
+            "aliases": {
+                "RazorPayX": "OptimoApps\\RazorPayX\\RazorPayXFacade"
+            }
+        }
+    }
+}
