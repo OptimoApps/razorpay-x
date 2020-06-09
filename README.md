@@ -1,7 +1,6 @@
 # RazorPay X Laravel Payment Gateway
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/optimoapps/razorpay-x.svg?style=flat-square)](https://packagist.org/packages/optimoapps/razorpay-x)
-[![Build Status](https://img.shields.io/travis/optimoapps/razorpay-x/master.svg?style=flat-square)](https://travis-ci.org/optimoapps/razorpay-x)
 [![Total Downloads](https://img.shields.io/packagist/dt/optimoapps/razorpay-x.svg?style=flat-square)](https://packagist.org/packages/optimoapps/razorpay-x)
 ![run-tests](https://github.com/OptimoApps/razorpay-x/workflows/run-tests/badge.svg)
 ![Check & fix styling](https://github.com/OptimoApps/razorpay-x/workflows/Check%20&%20fix%20styling/badge.svg)
