@@ -18,7 +18,6 @@ use RazorPayX;
 
 class ContactTest extends TestCase
 {
-
     private static $contact;
 
     /*
@@ -56,8 +55,7 @@ class ContactTest extends TestCase
             'notes_key_1' => 'Tea, Earl Grey, Hot',
             'notes_key_2' => 'Tea, Earl Grey… decaf.',
         ];
+
         return $contact;
     }
-
-
 }

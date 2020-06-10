@@ -49,6 +49,7 @@ class PropertyMapper extends \JsonMapper\Handler\PropertyMapper
 
             if ($propertyInfo->getVisibility()->equals(Visibility::PUBLIC())) {
                 $object->getObject()->$key = $value;
+
                 continue;
             }
 

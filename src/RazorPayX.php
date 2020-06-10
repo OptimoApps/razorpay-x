@@ -30,10 +30,12 @@ class RazorPayX
     /**
      * RazorPayX constructor.
      */
-    public function __construct(ContactManager $contactManager,
-                                AccountManager $accountManager,
-                                PaymentManager $paymentManager,
-                                TransactionManager $transactionManager)
+    public function __construct(
+        ContactManager $contactManager,
+        AccountManager $accountManager,
+        PaymentManager $paymentManager,
+        TransactionManager $transactionManager
+    )
     {
         $this->contactManager = $contactManager;
         $this->accountManager = $accountManager;

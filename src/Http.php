@@ -43,9 +43,9 @@ abstract class Http
     {
         try {
             return $this->client->get(RazorPayXAPI::PROD_API.$endPoint, [
-                'query'                 => $queryParams,
+                'query' => $queryParams,
                 RequestOptions::HEADERS => ['Content-Type' => 'application/json'],
-                RequestOptions::AUTH    => [config('razorpay-x.key_id'), config('razorpay-x.key_secret')],
+                RequestOptions::AUTH => [config('razorpay-x.key_id'), config('razorpay-x.key_secret')],
             ])->getBody();
         } catch (ClientException $exception) {
             throw new RazorPayException($exception->getResponse()->getBody()->getContents(), $exception->getResponse()->getStatusCode());
@@ -60,8 +60,8 @@ abstract class Http
         try {
             return $this->client->post(RazorPayXAPI::PROD_API.$endPoint, [
                 RequestOptions::HEADERS => ['Content-Type' => 'application/json'],
-                RequestOptions::AUTH    => [config('razorpay-x.key_id'), config('razorpay-x.key_secret')],
-                RequestOptions::JSON    => $params,
+                RequestOptions::AUTH => [config('razorpay-x.key_id'), config('razorpay-x.key_secret')],
+                RequestOptions::JSON => $params,
             ])->getBody();
         } catch (ClientException $exception) {
             throw new RazorPayException($exception->getResponse()->getBody()->getContents(), $exception->getResponse()->getStatusCode());
@@ -76,8 +76,8 @@ abstract class Http
         try {
             return $this->client->patch(RazorPayXAPI::PROD_API.$endPoint, [
                 RequestOptions::HEADERS => ['Content-Type' => 'application/json'],
-                RequestOptions::AUTH    => [config('razorpay-x.key_id'), config('razorpay-x.key_secret')],
-                RequestOptions::JSON    => $params,
+                RequestOptions::AUTH => [config('razorpay-x.key_id'), config('razorpay-x.key_secret')],
+                RequestOptions::JSON => $params,
             ])->getBody();
         } catch (ClientException $exception) {
             throw new RazorPayException($exception->getResponse()->getBody()->getContents(), $exception->getResponse()->getStatusCode());
