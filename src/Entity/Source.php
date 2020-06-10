@@ -4,9 +4,7 @@
  *  *  * Copyright (C) OPTIMO TECHNOLOGIES  - All Rights Reserved
  *  *  * Unauthorized copying of this file, via any medium is strictly prohibited
  *  *  * Proprietary and confidential
- *  *  * Written by Sathish Kumar(satz) <sathish.thi@gmail.com>ManiKandan<smanikandanit@gmail.com >
- *  *
- *
+ *  *  * Written by Sathish Kumar(satz) <sathish.thi@gmail.com>ManiKandan<smanikandanit@gmail.com >.
  */
 declare(strict_types=1);
 
@@ -17,44 +15,20 @@ namespace Optimoapps\RazorPayX\Entity;
  */
 class Source
 {
-    /**
-     * @var string
-     */
     public string $id;
 
-    /**
-     * @var string
-     */
     public string $entity;
 
-    /**
-     * @var string
-     */
     public string $payer_name;
 
-    /**
-     * @var string
-     */
     public string $payer_account;
 
-    /**
-     * @var string
-     */
     public string $payer_ifsc;
 
-    /**
-     * @var string
-     */
     public string $mode;
 
-    /**
-     * @var string
-     */
     public string $bank_reference;
 
-    /**
-     * @var int
-     */
     public int $amount;
 
     /**

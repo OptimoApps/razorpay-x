@@ -4,9 +4,7 @@
  *  *  * Copyright (C) OPTIMO TECHNOLOGIES  - All Rights Reserved
  *  *  * Unauthorized copying of this file, via any medium is strictly prohibited
  *  *  * Proprietary and confidential
- *  *  * Written by Sathish Kumar(satz) <sathish.thi@gmail.com>ManiKandan<smanikandanit@gmail.com >
- *  *
- *
+ *  *  * Written by Sathish Kumar(satz) <sathish.thi@gmail.com>ManiKandan<smanikandanit@gmail.com >.
  */
 
 namespace OptimoApps\RazorPayX\Tests\Unit;
@@ -30,8 +28,8 @@ class ContactTest extends TestCase
         $contact->type = ContactTypeEnum::EMPLOYEE;
         $contact->reference_id = 'Acme Contact ID 12345';
         $contact->notes = [
-            "notes_key_1" => "Tea, Earl Grey, Hot",
-            "notes_key_2" => "Tea, Earl Grey… decaf."
+            'notes_key_1' => 'Tea, Earl Grey, Hot',
+            'notes_key_2' => 'Tea, Earl Grey… decaf.',
         ];
         $response = RazorPayX::contact()->create($contact);
         $this->assertEquals($contact->type, $response->type);
