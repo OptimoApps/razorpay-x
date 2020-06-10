@@ -4,7 +4,9 @@
  *  *  * Copyright (C) OPTIMO TECHNOLOGIES  - All Rights Reserved
  *  *  * Unauthorized copying of this file, via any medium is strictly prohibited
  *  *  * Proprietary and confidential
- *  *  * Written by Sathish Kumar(satz) <sathish.thi@gmail.com>ManiKandan<smanikandanit@gmail.com >.
+ *  *  * Written by Sathish Kumar(satz) <sathish.thi@gmail.com>ManiKandan<smanikandanit@gmail.com >
+ *  *
+ *
  */
 declare(strict_types=1);
 
@@ -12,6 +14,7 @@ namespace OptimoApps\RazorPayX\Contracts;
 
 use OptimoApps\RazorPayX\Entity\Contact;
 use OptimoApps\RazorPayX\Entity\ContactCollection;
+use OptimoApps\RazorPayX\Exceptions\RazorPayException;
 use OptimoApps\RazorPayX\Http;
 
 /**
@@ -25,6 +28,9 @@ class ContactManager extends Http
      * Create a Contact.
      *
      * @see https://razorpay.com/docs/razorpayx/api/contacts/#create-a-contact
+     * @param Contact $contact
+     * @return Contact
+     * @throws RazorPayException
      */
     public function create(Contact $contact): Contact
     {
@@ -39,6 +45,10 @@ class ContactManager extends Http
      * Update a Contact.
      *
      * @see https://razorpay.com/docs/razorpayx/api/contacts/#update-a-contact
+     * @param string $id
+     * @param Contact $contact
+     * @return Contact
+     * @throws RazorPayException
      */
     public function update(string $id, Contact $contact): Contact
     {
@@ -53,6 +63,10 @@ class ContactManager extends Http
      * Activate or Deactivate a Contact.
      *
      * @see https://razorpay.com/docs/razorpayx/api/contacts/#activate-or-deactivate-a-contact
+     * @param string $id
+     * @param bool $active
+     * @return Contact
+     * @throws RazorPayException
      */
     public function changeStatus(string $id, bool $active): Contact
     {
@@ -67,6 +81,9 @@ class ContactManager extends Http
      * Fetch a Contact by ID.
      *
      * @see https://razorpay.com/docs/razorpayx/api/contacts/#fetch-a-contact-by-id
+     * @param string $contactId
+     * @return Contact
+     * @throws RazorPayException
      */
     public function find(string $contactId): Contact
     {
@@ -81,6 +98,9 @@ class ContactManager extends Http
      * Fetch All Contacts.
      *
      * @see https://razorpay.com/docs/razorpayx/api/contacts/#fetch-all-contacts
+     * @param Contact|null $contact
+     * @return ContactCollection
+     * @throws RazorPayException
      */
     public function fetch(Contact $contact = null): ContactCollection
     {

@@ -4,7 +4,9 @@
  *  *  * Copyright (C) OPTIMO TECHNOLOGIES  - All Rights Reserved
  *  *  * Unauthorized copying of this file, via any medium is strictly prohibited
  *  *  * Proprietary and confidential
- *  *  * Written by Sathish Kumar(satz) <sathish.thi@gmail.com>ManiKandan<smanikandanit@gmail.com >.
+ *  *  * Written by Sathish Kumar(satz) <sathish.thi@gmail.com>ManiKandan<smanikandanit@gmail.com >
+ *  *
+ *
  */
 declare(strict_types=1);
 
@@ -25,6 +27,9 @@ class PaymentManager extends Http
      * Create a Payout.
      *
      * @see https://razorpay.com/docs/razorpayx/api/payouts/#create-a-payout
+     * @param Payment $payment
+     * @return Payment
+     * @throws \OptimoApps\RazorPayX\Exceptions\RazorPayException
      */
     public function create(Payment $payment): Payment
     {
@@ -39,6 +44,9 @@ class PaymentManager extends Http
      * Fetch All Payouts.
      *
      * @see https://razorpay.com/docs/razorpayx/api/payouts/#fetch-all-payouts
+     * @param Payment $payment
+     * @return PaymentCollection
+     * @throws \OptimoApps\RazorPayX\Exceptions\RazorPayException
      */
     public function fetch(Payment $payment): PaymentCollection
     {
@@ -53,6 +61,9 @@ class PaymentManager extends Http
      * Fetch a Payout By Id.
      *
      * @see https://razorpay.com/docs/razorpayx/api/payouts/#fetch-a-payout-by-id
+     * @param string $id
+     * @return Payment
+     * @throws \OptimoApps\RazorPayX\Exceptions\RazorPayException
      */
     public function find(string $id): Payment
     {
@@ -67,6 +78,9 @@ class PaymentManager extends Http
      * Cancel a Queued Payout.
      *
      * @see https://razorpay.com/docs/razorpayx/api/payouts/#cancel-a-queued-payout
+     * @param string $id
+     * @return Payment
+     * @throws \OptimoApps\RazorPayX\Exceptions\RazorPayException
      */
     public function cancel(string $id): Payment
     {

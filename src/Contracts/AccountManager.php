@@ -4,7 +4,9 @@
  *  *  * Copyright (C) OPTIMO TECHNOLOGIES  - All Rights Reserved
  *  *  * Unauthorized copying of this file, via any medium is strictly prohibited
  *  *  * Proprietary and confidential
- *  *  * Written by Sathish Kumar(satz) <sathish.thi@gmail.com>ManiKandan<smanikandanit@gmail.com >.
+ *  *  * Written by Sathish Kumar(satz) <sathish.thi@gmail.com>ManiKandan<smanikandanit@gmail.com >
+ *  *
+ *
  */
 declare(strict_types=1);
 
@@ -29,6 +31,8 @@ class AccountManager extends Http
      *
      * @see https://razorpay.com/docs/razorpayx/api/fund-accounts/#create-a-fund-account-for-a-contacts-bank
      *
+     * @param Account $account
+     * @return Account
      * @throws RazorPayException
      */
     public function create(Account $account): Account
@@ -45,6 +49,9 @@ class AccountManager extends Http
      *
      * @see https://razorpay.com/docs/razorpayx/api/fund-accounts/#activate-or-deactivate-a-fund-account
      *
+     * @param string $accountId
+     * @param bool $active
+     * @return Account
      * @throws RazorPayException
      */
     public function changeStatus(string $accountId, bool $active): Account
@@ -61,6 +68,8 @@ class AccountManager extends Http
      *
      * @see https://razorpay.com/docs/razorpayx/api/fund-accounts/#fetch-all-fund-accounts
      *
+     * @param Account|null $account
+     * @return AccountCollection
      * @throws RazorPayException
      */
     public function fetch(Account $account = null): AccountCollection
@@ -78,6 +87,8 @@ class AccountManager extends Http
      *
      * @see https://razorpay.com/docs/razorpayx/api/fund-accounts/#fetch-fund-account-details-by-id
      *
+     * @param string $id
+     * @return Account
      * @throws RazorPayException
      */
     public function find(string $id): Account
