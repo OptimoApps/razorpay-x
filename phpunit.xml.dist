@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ /**
+  ~  *  * Copyright (C) OPTIMO TECHNOLOGIES  - All Rights Reserved
+  ~  *  * Unauthorized copying of this file, via any medium is strictly prohibited
+  ~  *  * Proprietary and confidential
+  ~  *  * Written by Sathish Kumar(satz) <sathish.thi@gmail.com>ManiKandan<smanikandanit@gmail.com >
+  ~  *
+  ~  */
+  -->
+
 <phpunit bootstrap="vendor/autoload.php"
          backupGlobals="false"
          backupStaticAttributes="false"
@@ -20,8 +30,8 @@
         </whitelist>
     </filter>
     <php>
-        <env name="KEY_ID" value="rzp_test_0cO5NSrk3Q2Wxt"/>
-        <env name="KEY_SECRET" value="ob1r2t7kQGc4eYJBGFG2WObq"/>
+        <env name="KEY_ID" value=""/>
+        <env name="KEY_SECRET" value=""/>
     </php>
 </phpunit>
 

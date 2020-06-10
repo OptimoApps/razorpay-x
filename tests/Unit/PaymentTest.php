@@ -4,7 +4,9 @@
  *  *  * Copyright (C) OPTIMO TECHNOLOGIES  - All Rights Reserved
  *  *  * Unauthorized copying of this file, via any medium is strictly prohibited
  *  *  * Proprietary and confidential
- *  *  * Written by Sathish Kumar(satz) <sathish.thi@gmail.com>ManiKandan<smanikandanit@gmail.com >.
+ *  *  * Written by Sathish Kumar(satz) <sathish.thi@gmail.com>ManiKandan<smanikandanit@gmail.com >
+ *  *
+ *
  */
 
 namespace OptimoApps\RazorPayX\Tests\Unit;
@@ -14,10 +16,20 @@ use OptimoApps\RazorPayX\Enum\PaymentModeEnum;
 use OptimoApps\RazorPayX\RazorPayX;
 use OptimoApps\RazorPayX\Tests\TestCase;
 
+/**
+ * Class PaymentTest
+ * @package OptimoApps\RazorPayX\Tests\Unit
+ */
 class PaymentTest extends TestCase
 {
+    /**
+     * @var mixed|RazorPayX
+     */
     private RazorPayX $razorPayX;
 
+    /**
+     * @throws \Illuminate\Contracts\Container\BindingResolutionException
+     */
     public function setUp(): void
     {
         parent::setUp();
@@ -55,7 +67,7 @@ class PaymentTest extends TestCase
     /*
      * @test
      */
-    public function testCanFindPayment()
+    public function testCanFindPayment(): void
     {
         $response = $this->razorPayX->payment()->find('pout_Ezim1yeEp7oGif');
         $this->assertEquals('INR', $response->currency);

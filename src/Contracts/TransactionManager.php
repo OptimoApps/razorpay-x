@@ -4,13 +4,17 @@
  *  *  * Copyright (C) OPTIMO TECHNOLOGIES  - All Rights Reserved
  *  *  * Unauthorized copying of this file, via any medium is strictly prohibited
  *  *  * Proprietary and confidential
- *  *  * Written by Sathish Kumar(satz) <sathish.thi@gmail.com>ManiKandan<smanikandanit@gmail.com >.
+ *  *  * Written by Sathish Kumar(satz) <sathish.thi@gmail.com>ManiKandan<smanikandanit@gmail.com >
+ *  *
+ *
  */
+declare(strict_types=1);
 
 namespace OptimoApps\RazorPayX\Contracts;
 
 use OptimoApps\RazorPayX\Entity\Transaction;
 use OptimoApps\RazorPayX\Entity\TransactionCollection;
+use OptimoApps\RazorPayX\Exceptions\RazorPayException;
 use OptimoApps\RazorPayX\Http;
 
 /**
@@ -38,6 +42,9 @@ class TransactionManager extends Http
      * Fetch Transaction by ID.
      *
      * @see https://razorpay.com/docs/razorpayx/api/transactions/#fetch-transaction-by-id
+     * @param string $transactionId
+     * @return Transaction
+     * @throws RazorPayException
      */
     public function find(string $transactionId): Transaction
     {

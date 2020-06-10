@@ -10,25 +10,17 @@
  */
 declare(strict_types=1);
 
-namespace OptimoApps\RazorPayX\Entity;
+namespace OptimoApps\RazorPayX\Exceptions;
 
-/**
- * Class Vpa.
- */
-class Vpa
+
+class InvalidConfigException extends \Exception
 {
     /**
-     * @var string
+     * @return InvalidConfigException
      */
-    public string $address;
-
-    /**
-     * Convert Object to Array.
-     */
-    public function toArray(): array
+    public static function keyNotSpecified(): InvalidConfigException
     {
-        return array_filter((array) get_object_vars($this), static function ($val) {
-            return ! is_null($val);
-        });
+        return new static('There was a missing key in config file');
     }
+
 }

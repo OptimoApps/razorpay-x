@@ -4,8 +4,11 @@
  *  *  * Copyright (C) OPTIMO TECHNOLOGIES  - All Rights Reserved
  *  *  * Unauthorized copying of this file, via any medium is strictly prohibited
  *  *  * Proprietary and confidential
- *  *  * Written by Sathish Kumar(satz) <sathish.thi@gmail.com>ManiKandan<smanikandanit@gmail.com >.
+ *  *  * Written by Sathish Kumar(satz) <sathish.thi@gmail.com>ManiKandan<smanikandanit@gmail.com >
+ *  *
+ *
  */
+declare(strict_types=1);
 
 namespace OptimoApps\RazorPayX\Handler;
 
@@ -21,6 +24,10 @@ use JsonMapper\Wrapper\ObjectWrapper;
 class PropertyMapper extends \JsonMapper\Handler\PropertyMapper
 {
     /**
+     * @param \stdClass $json
+     * @param ObjectWrapper $object
+     * @param PropertyMap $propertyMap
+     * @param JsonMapperInterface $mapper
      * @throws \Exception
      */
     public function __invoke(
@@ -28,10 +35,11 @@ class PropertyMapper extends \JsonMapper\Handler\PropertyMapper
         ObjectWrapper $object,
         PropertyMap $propertyMap,
         JsonMapperInterface $mapper
-    ): void {
-        $values = (array) $json;
+    ): void
+    {
+        $values = (array)$json;
         foreach ($values as $key => $value) {
-            if (! $propertyMap->hasProperty($key)) {
+            if (!$propertyMap->hasProperty($key)) {
                 continue;
             }
 
@@ -41,7 +49,7 @@ class PropertyMapper extends \JsonMapper\Handler\PropertyMapper
             if ($propertyInfo->isArray()) {
                 $value = array_map(function ($value) use ($mapper, $type) {
                     return $this->mapPropertyValue($mapper, $type, $value);
-                }, (array) $value);
+                }, (array)$value);
             } else {
                 $value = $this->mapPropertyValue($mapper, $type, $value);
             }
@@ -51,7 +59,7 @@ class PropertyMapper extends \JsonMapper\Handler\PropertyMapper
                 continue;
             }
 
-            $setterMethod = 'set'.ucfirst($key);
+            $setterMethod = 'set' . ucfirst($key);
             if (method_exists($object->getObject(), $setterMethod)) {
                 $object->getObject()->$setterMethod($value);
             }
@@ -59,6 +67,8 @@ class PropertyMapper extends \JsonMapper\Handler\PropertyMapper
     }
 
     /**
+     * @param JsonMapperInterface $mapper
+     * @param string $type
      * @param mixed $value
      *
      * @return mixed

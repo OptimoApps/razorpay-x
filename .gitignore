@@ -5,3 +5,4 @@ vendor
 coverage
 .env
 .php_cs.cache
+coverage.xml

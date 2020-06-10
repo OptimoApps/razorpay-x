@@ -1,9 +1,11 @@
 {
     "name": "optimoapps/razorpay-x",
-    "description": "Razorpay X Payment gateway laravel package",
+    "description": "Razorpay X Payout gateway laravel package",
     "keywords": [
         "optimoapps",
-        "razorpay-x"
+        "razorpay-x",
+        "india payment gateway",
+        "razorpay laravel"
     ],
     "homepage": "https://github.com/optimoapps/razorpay-x",
     "license": "MIT",
@@ -53,5 +55,7 @@
                 "RazorPayX": "OptimoApps\\RazorPayX\\RazorPayXFacade"
             }
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

@@ -9,16 +9,10 @@
  *
  */
 
-namespace OptimoApps\RazorPayX\Enum;
+namespace OptimoApps\RazorPayX\Exceptions;
 
-/**
- * Class AccountTypeEnum.
- */
-final class AccountTypeEnum
+
+class RazorPayException extends \Exception
 {
-    public const BANK_ACCOUNT = 'bank_account';
 
-    public const VPA = 'vpa';
-
-    public const CARD = 'card';
 }

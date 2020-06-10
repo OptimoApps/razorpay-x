@@ -4,7 +4,9 @@
  *  *  * Copyright (C) OPTIMO TECHNOLOGIES  - All Rights Reserved
  *  *  * Unauthorized copying of this file, via any medium is strictly prohibited
  *  *  * Proprietary and confidential
- *  *  * Written by Sathish Kumar(satz) <sathish.thi@gmail.com>ManiKandan<smanikandanit@gmail.com >.
+ *  *  * Written by Sathish Kumar(satz) <sathish.thi@gmail.com>ManiKandan<smanikandanit@gmail.com >
+ *  *
+ *
  */
 
 namespace OptimoApps\RazorPayX\Tests\Unit;
@@ -13,6 +15,7 @@ use Illuminate\Contracts\Container\BindingResolutionException;
 use OptimoApps\RazorPayX\Entity\Account;
 use OptimoApps\RazorPayX\Entity\Bank;
 use OptimoApps\RazorPayX\Enum\AccountTypeEnum;
+use OptimoApps\RazorPayX\Exceptions\RazorPayException;
 use OptimoApps\RazorPayX\RazorPayX;
 use OptimoApps\RazorPayX\Tests\TestCase;
 
@@ -65,7 +68,7 @@ class AccountTest extends TestCase
         $this->assertIsObject($response);
         $this->assertIsArray($response->items);
         $this->assertInstanceOf(Account::class, $response->items[0]);
-        $this->assertEquals(1, $response->count);
+        $this->assertEquals(2, $response->count);
     }
 
     /*
@@ -77,5 +80,14 @@ class AccountTest extends TestCase
         $this->assertIsObject($response);
         $this->assertInstanceOf(Bank::class, $response->bank_account);
         $this->assertEquals('HDFC0000053', $response->bank_account->ifsc);
+    }
+
+    /*
+     * @test
+     */
+    public function testCanThrowExceptionNotAccountFind(): void
+    {
+        $this->expectException(RazorPayException::class);
+        $this->razorPayX->account()->find('fa_EzFCyMGCEwTgmSf');
     }
 }

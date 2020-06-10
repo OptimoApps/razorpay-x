@@ -35,7 +35,7 @@ jobs:
                 with:
                     php-version: ${{ matrix.php }}
                     extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, intl, gd, exif, iconv
-                    coverage: none
+                    coverage: pcov
                 env:
                     KEY_ID: ${{ secrets.KEY_ID }}
                     KEY_SECRET:  ${{ secrets.KEY_SECRET }}
@@ -45,4 +45,4 @@ jobs:
                     composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
                     composer update --${{ matrix.dependency-version }} --prefer-dist --no-interaction --no-suggest
             -   name: Execute tests
-                run: vendor/bin/phpunit
+                run: vendor/bin/phpunit --coverage-text --coverage-clover=coverage.xml
