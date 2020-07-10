@@ -4,7 +4,9 @@
  *  *  * Copyright (C) OPTIMO TECHNOLOGIES  - All Rights Reserved
  *  *  * Unauthorized copying of this file, via any medium is strictly prohibited
  *  *  * Proprietary and confidential
- *  *  * Written by Sathish Kumar(satz) <sathish.thi@gmail.com>ManiKandan<smanikandanit@gmail.com >.
+ *  *  * Written by Sathish Kumar(satz) <sathish.thi@gmail.com>ManiKandan<smanikandanit@gmail.com >
+ *  *
+ *
  */
 
 namespace OptimoApps\RazorPayX;
@@ -23,8 +25,14 @@ use Psr\Http\Message\StreamInterface;
  */
 abstract class Http
 {
+    /**
+     * @var Client
+     */
     protected Client $client;
 
+    /**
+     * @var JsonMapperInterface
+     */
     protected JsonMapperInterface $jsonMapper;
 
     /**
@@ -37,6 +45,9 @@ abstract class Http
     }
 
     /**
+     * @param string $endPoint
+     * @param array $queryParams
+     * @return StreamInterface
      * @throws RazorPayException
      */
     protected function get(string $endPoint, array $queryParams = []): StreamInterface
@@ -53,6 +64,9 @@ abstract class Http
     }
 
     /**
+     * @param string $endPoint
+     * @param array $params
+     * @return StreamInterface
      * @throws RazorPayException
      */
     protected function post(string $endPoint, array $params): StreamInterface
@@ -69,6 +83,9 @@ abstract class Http
     }
 
     /**
+     * @param string $endPoint
+     * @param array $params
+     * @return StreamInterface
      * @throws RazorPayException
      */
     protected function patch(string $endPoint, array $params): StreamInterface

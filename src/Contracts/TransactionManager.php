@@ -28,6 +28,7 @@ class TransactionManager extends Http
      * @link https://razorpay.com/docs/razorpayx/api/transactions/#fetch-all-transactions
      * @param Transaction $transaction
      * @return TransactionCollection
+     * @throws RazorPayException
      */
     public function fetch(Transaction $transaction): TransactionCollection
     {

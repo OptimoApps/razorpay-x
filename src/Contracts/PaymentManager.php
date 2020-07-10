@@ -14,6 +14,7 @@ namespace OptimoApps\RazorPayX\Contracts;
 
 use OptimoApps\RazorPayX\Entity\Payment;
 use OptimoApps\RazorPayX\Entity\PaymentCollection;
+use OptimoApps\RazorPayX\Exceptions\RazorPayException;
 use OptimoApps\RazorPayX\Http;
 
 /**
@@ -29,7 +30,7 @@ class PaymentManager extends Http
      * @see https://razorpay.com/docs/razorpayx/api/payouts/#create-a-payout
      * @param Payment $payment
      * @return Payment
-     * @throws \OptimoApps\RazorPayX\Exceptions\RazorPayException
+     * @throws RazorPayException
      */
     public function create(Payment $payment): Payment
     {
@@ -46,7 +47,7 @@ class PaymentManager extends Http
      * @see https://razorpay.com/docs/razorpayx/api/payouts/#fetch-all-payouts
      * @param Payment $payment
      * @return PaymentCollection
-     * @throws \OptimoApps\RazorPayX\Exceptions\RazorPayException
+     * @throws RazorPayException
      */
     public function fetch(Payment $payment): PaymentCollection
     {
@@ -63,7 +64,7 @@ class PaymentManager extends Http
      * @see https://razorpay.com/docs/razorpayx/api/payouts/#fetch-a-payout-by-id
      * @param string $id
      * @return Payment
-     * @throws \OptimoApps\RazorPayX\Exceptions\RazorPayException
+     * @throws RazorPayException
      */
     public function find(string $id): Payment
     {
@@ -80,7 +81,7 @@ class PaymentManager extends Http
      * @see https://razorpay.com/docs/razorpayx/api/payouts/#cancel-a-queued-payout
      * @param string $id
      * @return Payment
-     * @throws \OptimoApps\RazorPayX\Exceptions\RazorPayException
+     * @throws RazorPayException
      */
     public function cancel(string $id): Payment
     {

@@ -4,7 +4,9 @@
  *  *  * Copyright (C) OPTIMO TECHNOLOGIES  - All Rights Reserved
  *  *  * Unauthorized copying of this file, via any medium is strictly prohibited
  *  *  * Proprietary and confidential
- *  *  * Written by Sathish Kumar(satz) <sathish.thi@gmail.com>ManiKandan<smanikandanit@gmail.com >.
+ *  *  * Written by Sathish Kumar(satz) <sathish.thi@gmail.com>ManiKandan<smanikandanit@gmail.com >
+ *  *
+ *
  */
 
 namespace OptimoApps\RazorPayX\Tests\Unit;
@@ -66,7 +68,7 @@ class AccountTest extends TestCase
         $this->assertIsObject($response);
         $this->assertIsArray($response->items);
         $this->assertInstanceOf(Account::class, $response->items[0]);
-        $this->assertEquals(2, $response->count);
+        $this->assertEquals(3, $response->count);
     }
 
     /*
