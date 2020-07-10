@@ -53,8 +53,7 @@ class RazorPayX
         AccountManager $accountManager,
         PaymentManager $paymentManager,
         TransactionManager $transactionManager
-    )
-    {
+    ) {
         $this->contactManager = $contactManager;
         $this->accountManager = $accountManager;
         $this->paymentManager = $paymentManager;
