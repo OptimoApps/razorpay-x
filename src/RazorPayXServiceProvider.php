@@ -43,7 +43,13 @@ class RazorPayXServiceProvider extends ServiceProvider
         $this->app->singleton(RazorPayX::class, function () {
             $this->checkInvalidConfiguration(config('razorpay-x'));
 
-            return new RazorPayX(new ContactManager(), new AccountManager(), new PaymentManager(), new TransactionManager());
+
+            return new RazorPayX(
+                $this->app->get(ContactManager::class),
+                $this->app->get(AccountManager::class),
+                $this->app->get(PaymentManager::class),
+                $this->app->get(TransactionManager::class)
+            );
         });
         $this->app->alias(RazorPayX::class, 'razorpay-x');
     }

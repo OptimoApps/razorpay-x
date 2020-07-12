@@ -9,6 +9,7 @@
 
 namespace OptimoApps\RazorPayX\Tests;
 
+use JsonMapper\LaravelPackage\ServiceProvider;
 use OptimoApps\RazorPayX\RazorPayXFacade;
 use OptimoApps\RazorPayX\RazorPayXServiceProvider;
 
@@ -26,6 +27,7 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
     {
         return [
             RazorPayXServiceProvider::class,
+            ServiceProvider::class,
         ];
     }
 
@@ -49,5 +51,7 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
         $app['config']->set('razorpay-x.key_id', env('KEY_ID'));
 
         $app['config']->set('razorpay-x.KEY_SECRET', env('KEY_SECRET'));
+
+        $app['config']->set('json-mapper.type', 'best-fit');
     }
 }

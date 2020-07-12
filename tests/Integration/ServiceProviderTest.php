@@ -11,9 +11,10 @@ namespace OptimoApps\RazorPayX\Tests\Integration;
 
 use Illuminate\Config\Repository;
 use Illuminate\Foundation\Application;
+use JsonMapper\LaravelPackage\ServiceProvider;
 use OptimoApps\RazorPayX\RazorPayX;
 use OptimoApps\RazorPayX\RazorPayXServiceProvider;
-use PHPUnit\Framework\TestCase;
+use OptimoApps\RazorPayX\Tests\TestCase;
 
 /**
  * Class ServiceProviderTest.
@@ -42,9 +43,9 @@ class ServiceProviderTest extends TestCase
     {
         $app = new Application();
         $app->offsetSet('config', new Repository());
-        $serviceProvider = new RazorPayXServiceProvider($app);
+        (new RazorPayXServiceProvider($app))->register();
+        (new ServiceProvider($app))->register();
 
-        $serviceProvider->register();
 
         self::assertTrue($app->has(RazorPayX::class));
         self::assertInstanceOf(RazorPayX::class, $app->make(RazorPayX::class));

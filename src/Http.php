@@ -37,11 +37,13 @@ abstract class Http
 
     /**
      * Http constructor.
+     * @param Client $client
+     * @param JsonMapperInterface $jsonMapper
      */
-    public function __construct()
+    public function __construct(Client $client, JsonMapperInterface $jsonMapper)
     {
-        $this->client = new Client();
-        $this->jsonMapper = (new JsonMapperFactory())->bestFit();
+        $this->client = $client;
+        $this->jsonMapper = $jsonMapper;
     }
 
     /**
