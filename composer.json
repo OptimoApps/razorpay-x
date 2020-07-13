@@ -23,7 +23,8 @@
         "ext-json": "*",
         "guzzlehttp/guzzle": "^7.0",
         "illuminate/support": "^6.0|^7.0",
-        "json-mapper/laravel-package": "^1.1"
+        "json-mapper/json-mapper": "^1.2.0",
+        "json-mapper/laravel-package": "^1.1.2"
     },
     "require-dev": {
         "orchestra/testbench": "4.*|5.*",
