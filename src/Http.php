@@ -17,7 +17,6 @@ use GuzzleHttp\RequestOptions;
 use JsonMapper\JsonMapperInterface;
 use OptimoApps\RazorPayX\Enum\RazorPayXAPI;
 use OptimoApps\RazorPayX\Exceptions\RazorPayException;
-use OptimoApps\RazorPayX\Handler\JsonMapperFactory;
 use Psr\Http\Message\StreamInterface;
 
 /**
