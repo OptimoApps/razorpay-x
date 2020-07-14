@@ -11,7 +11,6 @@
 
 namespace OptimoApps\RazorPayX\Enum;
 
-
 /**
  * Class PurposeTypeEnum
  * @package OptimoApps\RazorPayX\Enum
