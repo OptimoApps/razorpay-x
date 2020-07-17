@@ -2,6 +2,7 @@
 
 All notable changes to `razorpay-x` will be documented in this file
 
-## 1.0.0 - 201X-XX-XX
+## V1.1.0
 
-- initial release
+- Added Purpose Type Enum
+- Merged Pull Request #1 in align with Laravel json Mapper Package

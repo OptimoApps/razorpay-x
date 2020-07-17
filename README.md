@@ -4,10 +4,11 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/optimoapps/razorpay-x.svg?style=flat-square)](https://packagist.org/packages/optimoapps/razorpay-x)
 ![run-tests](https://github.com/OptimoApps/razorpay-x/workflows/run-tests/badge.svg)
 ![Check & fix styling](https://github.com/OptimoApps/razorpay-x/workflows/Check%20&%20fix%20styling/badge.svg)
- <a href="/OptimoApps/razorpay-x/blob/master/LICENSE.md"><img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square"></a>
+ <a href="https://github.com/OptimoApps/razorpay-x/blob/master/LICENSE.md"><img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square"></a>
 
-RazorPay X Laravel Package. Supports JsonMapper
+RazorPay X Laravel Package. Supports <a href="https://github.com/JsonMapper/JsonMapper">JsonMapper</a>
 
+RazorPay X Laravel requires PHP 7.4. Supports Laravel 6 & 7.
 ## Installation
 
 You can install the package via composer:
