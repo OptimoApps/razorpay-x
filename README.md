@@ -8,7 +8,7 @@
 
 RazorPay X Laravel Package. Supports <a href="https://github.com/JsonMapper/JsonMapper">JsonMapper</a>
 
-RazorPay X Laravel requires PHP 7.4. Supports Laravel 6 & 7.
+RazorPay X Laravel requires PHP 7.4. Supports Laravel 6 , 7 & 8.
 ## Installation
 
 You can install the package via composer:
