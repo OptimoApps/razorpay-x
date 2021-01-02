@@ -35,7 +35,7 @@ class Account
 
     public bool $active;
 
-    public string $batch_id;
+    public ?string $batch_id;
 
     public int $created_at;
 

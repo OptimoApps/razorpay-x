@@ -29,7 +29,7 @@ class Contact
 
     public string $reference_id;
 
-    public string $batch_id;
+    public ?string $batch_id;
 
     public bool $active;
 
