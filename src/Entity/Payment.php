@@ -29,7 +29,7 @@ class Payment
 
     public bool $queue_if_low_balance;
 
-    public string $reference_id;
+    public ?string $reference_id;
 
     public string $narration;
 
@@ -45,11 +45,11 @@ class Payment
 
     public string $status;
 
-    public string $utr;
+    public ?string $utr;
 
-    public string $batch_id;
+    public ?string $batch_id;
 
-    public string $failure_reason;
+    public ?string $failure_reason;
 
     public int $created_at;
 
