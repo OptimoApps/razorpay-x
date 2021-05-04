@@ -34,7 +34,7 @@ class TransactionManager extends Http
     {
         $response = $this->get(self::ENDPOINT, $transaction->toArray())->getContents();
         $transactionCollection = new TransactionCollection();
-        $this->jsonMapper->mapObject(json_decode($response), $transactionCollection);
+        $this->jsonMapper->mapToCollectionFromString($response, $transactionCollection);
 
         return $transactionCollection;
     }
@@ -50,9 +50,9 @@ class TransactionManager extends Http
      */
     public function find(string $transactionId): Transaction
     {
-        $response = $this->get(self::ENDPOINT, $transactionId)->getContents();
+        $response = $this->get(self::ENDPOINT . '/' . $transactionId)->getContents();
         $transaction = new Transaction();
-        $this->jsonMapper->mapObject(json_decode($response), $transaction);
+        $this->jsonMapper->mapObjectFromString($response, $transaction);
 
         return $transaction;
     }

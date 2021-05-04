@@ -15,7 +15,7 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\RequestOptions;
-use JsonMapper\JsonMapperInterface;
+use JsonMapper\LaravelPackage\JsonMapperInterface;
 use OptimoApps\RazorPayX\Enum\RazorPayXAPI;
 use OptimoApps\RazorPayX\Exceptions\RazorPayException;
 use Psr\Http\Message\StreamInterface;

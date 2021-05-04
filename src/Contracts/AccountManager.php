@@ -39,7 +39,7 @@ class AccountManager extends Http
     {
         $response = $this->post(self::ACCOUNT_ENDPOINT, $account->toArray())->getContents();
         $account = new Account();
-        $this->jsonMapper->mapObject(json_decode($response), $account);
+        $this->jsonMapper->mapObjectFromString($response, $account);
 
         return $account;
     }
@@ -56,9 +56,9 @@ class AccountManager extends Http
      */
     public function changeStatus(string $accountId, bool $active): Account
     {
-        $response = $this->patch(self::ACCOUNT_ENDPOINT.'/'.$accountId, ['active' => $active])->getContents();
+        $response = $this->patch(self::ACCOUNT_ENDPOINT . '/' . $accountId, ['active' => $active])->getContents();
         $account = new Account();
-        $this->jsonMapper->mapObject(json_decode($response), $account);
+        $this->jsonMapper->mapObjectFromString($response, $account);
 
         return $account;
     }
@@ -70,14 +70,14 @@ class AccountManager extends Http
      *
      * @param Account|null $account
      * @return AccountCollection
-     * @throws RazorPayException
+     * @throws RazorPayException|\GuzzleHttp\Exception\GuzzleException
      */
     public function fetch(Account $account = null): AccountCollection
     {
         $accountParam = is_null($account) ? [] : $account->toArray();
         $response = $this->get(self::ACCOUNT_ENDPOINT, $accountParam)->getContents();
         $accountCollection = new AccountCollection();
-        $this->jsonMapper->mapObject(json_decode($response), $accountCollection);
+        $this->jsonMapper->mapObjectFromString($response, $accountCollection);
 
         return $accountCollection;
     }
@@ -93,9 +93,9 @@ class AccountManager extends Http
      */
     public function find(string $id): Account
     {
-        $response = $this->get(self::ACCOUNT_ENDPOINT.'/'.$id)->getContents();
+        $response = $this->get(self::ACCOUNT_ENDPOINT . '/' . $id)->getContents();
         $account = new Account();
-        $this->jsonMapper->mapObject(json_decode($response), $account);
+        $this->jsonMapper->mapObjectFromString($response, $account);
 
         return $account;
     }

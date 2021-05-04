@@ -24,10 +24,9 @@
     "require": {
         "php": "^7.4|^8.0",
         "ext-json": "*",
-        "guzzlehttp/guzzle": "^7.0",
+        "guzzlehttp/guzzle": "^7.3",
         "illuminate/support": "^6.0|^7.0|^8.0",
-        "json-mapper/json-mapper": "^2.0",
-        "json-mapper/laravel-package": "^2.0"
+        "json-mapper/laravel-package": "^2.2"
     },
     "require-dev": {
         "orchestra/testbench": "4.*|5.*|8.*",

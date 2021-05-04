@@ -36,7 +36,7 @@ class PaymentManager extends Http
     {
         $response = $this->post(self::PAYMENT, $payment->toArray())->getContents();
         $paymentResponse = new Payment();
-        $this->jsonMapper->mapObject(json_decode($response), $paymentResponse);
+        $this->jsonMapper->mapObjectFromString($response, $paymentResponse);
 
         return $paymentResponse;
     }
@@ -53,7 +53,7 @@ class PaymentManager extends Http
     {
         $response = $this->get(self::PAYMENT, $payment->toArray())->getContents();
         $paymentResponse = new PaymentCollection();
-        $this->jsonMapper->mapObject(json_decode($response), $paymentResponse);
+        $this->jsonMapper->mapObjectFromString($response, $paymentResponse);
 
         return $paymentResponse;
     }
@@ -70,7 +70,7 @@ class PaymentManager extends Http
     {
         $response = $this->get(self::PAYMENT.'/'.$id)->getContents();
         $paymentResponse = new Payment();
-        $this->jsonMapper->mapObject(json_decode($response), $paymentResponse);
+        $this->jsonMapper->mapObjectFromString($response, $paymentResponse);
 
         return $paymentResponse;
     }
@@ -87,7 +87,7 @@ class PaymentManager extends Http
     {
         $response = $this->get(self::PAYMENT.'/'.$id.'/cancel')->getContents();
         $paymentResponse = new Payment();
-        $this->jsonMapper->mapObject(json_decode($response), $paymentResponse);
+        $this->jsonMapper->mapObjectFromString($response, $paymentResponse);
 
         return $paymentResponse;
     }

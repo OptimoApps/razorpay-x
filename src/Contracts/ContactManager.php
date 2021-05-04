@@ -36,7 +36,7 @@ class ContactManager extends Http
     {
         $response = $this->post(self::ENDPOINT, $contact->toArray())->getContents();
         $contactResponse = new Contact();
-        $this->jsonMapper->mapObject(json_decode($response), $contactResponse);
+        $this->jsonMapper->mapObjectFromString($response, $contactResponse);
 
         return $contactResponse;
     }
@@ -52,9 +52,9 @@ class ContactManager extends Http
      */
     public function update(string $id, Contact $contact): Contact
     {
-        $response = $this->patch(self::ENDPOINT.'/'.$id, $contact->toArray())->getContents();
+        $response = $this->patch(self::ENDPOINT . '/' . $id, $contact->toArray())->getContents();
         $contactResponse = new Contact();
-        $this->jsonMapper->mapObject(json_decode($response), $contactResponse);
+        $this->jsonMapper->mapObjectFromString($response, $contactResponse);
 
         return $contactResponse;
     }
@@ -70,9 +70,9 @@ class ContactManager extends Http
      */
     public function changeStatus(string $id, bool $active): Contact
     {
-        $response = $this->patch(self::ENDPOINT.'/'.$id, ['active' => $active])->getContents();
+        $response = $this->patch(self::ENDPOINT . '/' . $id, ['active' => $active])->getContents();
         $contactResponse = new Contact();
-        $this->jsonMapper->mapObject(json_decode($response), $contactResponse);
+        $this->jsonMapper->mapObjectFromString($response, $contactResponse);
 
         return $contactResponse;
     }
@@ -87,9 +87,9 @@ class ContactManager extends Http
      */
     public function find(string $contactId): Contact
     {
-        $response = $this->get(self::ENDPOINT.'/'.$contactId)->getContents();
+        $response = $this->get(self::ENDPOINT . '/' . $contactId)->getContents();
         $contactResponse = new Contact();
-        $this->jsonMapper->mapObject(json_decode($response), $contactResponse);
+        $this->jsonMapper->mapObjectFromString($response, $contactResponse);
 
         return $contactResponse;
     }
@@ -107,7 +107,7 @@ class ContactManager extends Http
         $contactParam = is_null($contact) ? [] : $contact->toArray();
         $response = $this->get(self::ENDPOINT, $contactParam)->getContents();
         $contactResponse = new ContactCollection();
-        $this->jsonMapper->mapObject(json_decode($response), $contactResponse);
+        $this->jsonMapper->mapObjectFromString($response, $contactResponse);
 
         return $contactResponse;
     }
