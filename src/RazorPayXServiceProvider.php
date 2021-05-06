@@ -29,6 +29,7 @@ class RazorPayXServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__ . '/../config/config.php' => config_path('razorpay-x.php'),
+                __DIR__ . '/../config/json-mapper.php' => config_path('json-mapper.php'),
             ], 'config');
         }
     }
@@ -40,6 +41,7 @@ class RazorPayXServiceProvider extends ServiceProvider
     {
         // Automatically apply the package configuration
         $this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'razorpay-x');
+        $this->mergeConfigFrom(__DIR__ . '/../config/json-mapper.php', 'json-mapper');
 
         // Register the main class to use with the facade
         $this->app->singleton(RazorPayX::class, function () {

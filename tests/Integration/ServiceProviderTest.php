@@ -33,7 +33,7 @@ class ServiceProviderTest extends TestCase
 
         self::assertArrayHasKey(RazorPayXServiceProvider::class, $serviceProvider::$publishes);
         self::assertIsArray($serviceProvider::$publishes[RazorPayXServiceProvider::class]);
-        self::assertCount(1, $serviceProvider::$publishes[RazorPayXServiceProvider::class]);
+        self::assertCount(2, $serviceProvider::$publishes[RazorPayXServiceProvider::class]);
     }
 
     /*

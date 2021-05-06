@@ -17,15 +17,15 @@ class Contact
 {
     public string $id;
 
-    public string $entity;
+    public ?string $entity;
 
-    public string $name;
+    public ?string $name;
 
-    public string $contact;
+    public ?string $contact;
 
-    public string $email;
+    public ?string $email;
 
-    public string $type;
+    public ?string $type;
 
     public string $reference_id;
 

@@ -68,7 +68,7 @@ class AccountTest extends TestCase
         $this->assertIsObject($response);
         $this->assertIsArray($response->items);
         $this->assertInstanceOf(Account::class, $response->items[0]);
-        $this->assertEquals(3, $response->count);
+        $this->assertEquals(4, $response->count);
     }
 
     /*
