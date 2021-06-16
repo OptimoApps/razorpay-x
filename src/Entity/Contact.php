@@ -27,7 +27,7 @@ class Contact
 
     public ?string $type;
 
-    public string $reference_id;
+    public ?string $reference_id;
 
     public ?string $batch_id;
 
