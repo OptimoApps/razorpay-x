@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * *
  *  *  * Copyright (C) OPTIMO TECHNOLOGIES  - All Rights Reserved
  *  *  * Unauthorized copying of this file, via any medium is strictly prohibited
@@ -68,7 +68,6 @@ class AccountTest extends TestCase
         $this->assertIsObject($response);
         $this->assertIsArray($response->items);
         $this->assertInstanceOf(Account::class, $response->items[0]);
-        $this->assertEquals(4, $response->count);
     }
 
     /*

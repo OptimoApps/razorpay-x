@@ -8,6 +8,7 @@
         "laravel 6",
         "laravel 7",
         "laravel 8",
+        "laravel 9",
         "razorpay laravel"
     ],
     "homepage": "https://github.com/optimoapps/razorpay-x",
@@ -24,9 +25,9 @@
     "require": {
         "php": "^7.4|^8.0",
         "ext-json": "*",
-        "guzzlehttp/guzzle": "^7.3",
-        "illuminate/support": "^6.0|^7.0|^8.0",
-        "json-mapper/laravel-package": "^2.2"
+        "guzzlehttp/guzzle": "^7.4",
+        "illuminate/support": "^6.0|^7.0|^8.0|^9.0",
+        "json-mapper/laravel-package": "^2.3"
     },
     "require-dev": {
         "orchestra/testbench": "4.*|5.*|8.*",
