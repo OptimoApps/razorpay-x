@@ -39,7 +39,7 @@ class Payment
 
     public string $entity;
 
-    public int $fees;
+    public ?int $fees;
 
     public int $tax;
 
