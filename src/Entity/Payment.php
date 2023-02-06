@@ -33,7 +33,7 @@ class Payment
 
     public string $narration;
 
-    public array $notes;
+    public ?array $notes;
 
     public string $id;
 
@@ -41,7 +41,7 @@ class Payment
 
     public ?int $fees;
 
-    public int $tax;
+    public ?int $tax;
 
     public string $status;
 
@@ -51,7 +51,7 @@ class Payment
 
     public ?string $failure_reason;
 
-    public int $created_at;
+    public ?int $created_at;
 
     /**
      * Convert Object to Array.
