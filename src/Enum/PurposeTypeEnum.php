@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * *
  *  *  * Copyright (C) OPTIMO TECHNOLOGIES  - All Rights Reserved
  *  *  * Unauthorized copying of this file, via any medium is strictly prohibited
@@ -15,30 +15,30 @@ namespace OptimoApps\RazorPayX\Enum;
  * Class PurposeTypeEnum
  * @package OptimoApps\RazorPayX\Enum
  */
-final class PurposeTypeEnum
+enum PurposeTypeEnum: string
 {
     /**
      * refund
      */
-    public const REFUND = 'refund';
+    case REFUND = 'refund';
     /**
      * cashback
      */
-    public const CASH_BACK = 'cashback';
+    case CASH_BACK = 'cashback';
     /**
      *  payout
      */
-    public const PAYOUT = 'payout';
+    case PAYOUT = 'payout';
     /**
      *  salary
      */
-    public const SALARY = 'salary';
+    case SALARY = 'salary';
     /**
      * Utility Bill
      */
-    public const UTILITY_BILL = 'utility bill';
+    case UTILITY_BILL = 'utility bill';
     /**
      *  Vendor Bill
      */
-    public const VENDOR_BILL = 'vendor bill';
+    case VENDOR_BILL = 'vendor bill';
 }

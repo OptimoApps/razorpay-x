@@ -1,10 +1,12 @@
 <?php
-/**
+/*
  * *
  *  *  * Copyright (C) OPTIMO TECHNOLOGIES  - All Rights Reserved
  *  *  * Unauthorized copying of this file, via any medium is strictly prohibited
  *  *  * Proprietary and confidential
- *  *  * Written by Sathish Kumar(satz) <sathish.thi@gmail.com>ManiKandan<smanikandanit@gmail.com >.
+ *  *  * Written by Sathish Kumar(satz) <sathish.thi@gmail.com>ManiKandan<smanikandanit@gmail.com >
+ *  *
+ *
  */
 
 namespace OptimoApps\RazorPayX\Tests\Unit;
@@ -43,7 +45,7 @@ class PaymentTest extends TestCase
         $payment->fund_account_id = 'fa_EzFCyMGCEwTgmS';
         $payment->amount = 102;
         $payment->currency = 'INR';
-        $payment->mode = PaymentModeEnum::IMPS;
+        $payment->mode = PaymentModeEnum::IMPS->value;
         $payment->purpose = 'payout';
         $response = $this->razorPayX->payment()->create($payment);
         $this->assertEquals('INR', $response->currency);

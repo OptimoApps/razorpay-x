@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * *
  *  *  * Copyright (C) OPTIMO TECHNOLOGIES  - All Rights Reserved
  *  *  * Unauthorized copying of this file, via any medium is strictly prohibited
@@ -49,7 +49,7 @@ class ContactTest extends TestCase
         $contact->name = 'Gaurav Kumar';
         $contact->email = 'gaurav.kumar@example.com';
         $contact->contact = '9123456789';
-        $contact->type = ContactTypeEnum::EMPLOYEE;
+        $contact->type = ContactTypeEnum::EMPLOYEE->value;
         $contact->reference_id = 'Acme Contact ID 12345';
         $contact->notes = [
             'notes_key_1' => 'Tea, Earl Grey, Hot',

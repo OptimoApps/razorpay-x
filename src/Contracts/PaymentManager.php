@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * *
  *  *  * Copyright (C) OPTIMO TECHNOLOGIES  - All Rights Reserved
  *  *  * Unauthorized copying of this file, via any medium is strictly prohibited
@@ -30,7 +30,7 @@ class PaymentManager extends Http
      * @see https://razorpay.com/docs/razorpayx/api/payouts/#create-a-payout
      * @param Payment $payment
      * @return Payment
-     * @throws RazorPayException
+     * @throws RazorPayException|\GuzzleHttp\Exception\GuzzleException
      */
     public function create(Payment $payment): Payment
     {
@@ -47,7 +47,7 @@ class PaymentManager extends Http
      * @see https://razorpay.com/docs/razorpayx/api/payouts/#fetch-all-payouts
      * @param Payment $payment
      * @return PaymentCollection
-     * @throws RazorPayException
+     * @throws RazorPayException|\GuzzleHttp\Exception\GuzzleException
      */
     public function fetch(Payment $payment): PaymentCollection
     {
@@ -64,7 +64,7 @@ class PaymentManager extends Http
      * @see https://razorpay.com/docs/razorpayx/api/payouts/#fetch-a-payout-by-id
      * @param string $id
      * @return Payment
-     * @throws RazorPayException
+     * @throws RazorPayException|\GuzzleHttp\Exception\GuzzleException
      */
     public function find(string $id): Payment
     {
@@ -81,7 +81,7 @@ class PaymentManager extends Http
      * @see https://razorpay.com/docs/razorpayx/api/payouts/#cancel-a-queued-payout
      * @param string $id
      * @return Payment
-     * @throws RazorPayException
+     * @throws RazorPayException|\GuzzleHttp\Exception\GuzzleException
      */
     public function cancel(string $id): Payment
     {

@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * *
  *  *  * Copyright (C) OPTIMO TECHNOLOGIES  - All Rights Reserved
  *  *  * Unauthorized copying of this file, via any medium is strictly prohibited
@@ -21,25 +21,6 @@ use Optimoapps\RazorPayX\Contracts\TransactionManager;
  */
 class RazorPayX
 {
-    /**
-     * @var ContactManager
-     */
-    protected ContactManager $contactManager;
-
-    /**
-     * @var AccountManager
-     */
-    protected AccountManager $accountManager;
-
-    /**
-     * @var PaymentManager
-     */
-    protected PaymentManager $paymentManager;
-
-    /**
-     * @var TransactionManager
-     */
-    protected TransactionManager $transactionManager;
 
     /**
      * RazorPayX constructor.
@@ -49,15 +30,12 @@ class RazorPayX
      * @param TransactionManager $transactionManager
      */
     public function __construct(
-        ContactManager $contactManager,
-        AccountManager $accountManager,
-        PaymentManager $paymentManager,
-        TransactionManager $transactionManager
+       protected ContactManager $contactManager,
+       protected AccountManager $accountManager,
+       protected PaymentManager $paymentManager,
+       protected TransactionManager $transactionManager
     ) {
-        $this->contactManager = $contactManager;
-        $this->accountManager = $accountManager;
-        $this->paymentManager = $paymentManager;
-        $this->transactionManager = $transactionManager;
+
     }
 
     /**

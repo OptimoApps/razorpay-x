@@ -49,12 +49,12 @@ class AccountTest extends TestCase
         $bankAccount->ifsc = 'HDFC0000053';
         $account = new Account();
         $account->contact_id = 'cont_EyrHb3f1S0axBg';
-        $account->account_type = AccountTypeEnum::BANK_ACCOUNT;
+        $account->account_type = AccountTypeEnum::BANK_ACCOUNT->value;
         $account->bank_account = $bankAccount;
         $response = $this->razorPayX->account()->create($account);
         $this->assertIsObject($response);
         $this->assertIsString($response->id);
-        $this->assertEquals(AccountTypeEnum::BANK_ACCOUNT, $response->account_type);
+        $this->assertEquals(AccountTypeEnum::BANK_ACCOUNT->value, $response->account_type);
     }
 
     /*
@@ -63,7 +63,7 @@ class AccountTest extends TestCase
     public function testCanFetchAccount(): void
     {
         $account = new Account();
-        $account->account_type = AccountTypeEnum::BANK_ACCOUNT;
+        $account->account_type = AccountTypeEnum::BANK_ACCOUNT->value;
         $response = $this->razorPayX->account()->fetch($account);
         $this->assertIsObject($response);
         $this->assertIsArray($response->items);

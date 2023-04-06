@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * *
  *  *  * Copyright (C) OPTIMO TECHNOLOGIES  - All Rights Reserved
  *  *  * Unauthorized copying of this file, via any medium is strictly prohibited
@@ -28,7 +28,7 @@ class TransactionManager extends Http
      * @link https://razorpay.com/docs/razorpayx/api/transactions/#fetch-all-transactions
      * @param Transaction $transaction
      * @return TransactionCollection
-     * @throws RazorPayException
+     * @throws RazorPayException|\GuzzleHttp\Exception\GuzzleException
      */
     public function fetch(Transaction $transaction): TransactionCollection
     {
@@ -46,7 +46,7 @@ class TransactionManager extends Http
      *
      * @param string $transactionId
      * @return Transaction
-     * @throws RazorPayException
+     * @throws RazorPayException|\GuzzleHttp\Exception\GuzzleException
      */
     public function find(string $transactionId): Transaction
     {

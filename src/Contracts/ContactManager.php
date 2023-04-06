@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * *
  *  *  * Copyright (C) OPTIMO TECHNOLOGIES  - All Rights Reserved
  *  *  * Unauthorized copying of this file, via any medium is strictly prohibited
@@ -48,7 +48,7 @@ class ContactManager extends Http
      * @param string $id
      * @param Contact $contact
      * @return Contact
-     * @throws RazorPayException
+     * @throws RazorPayException|\GuzzleHttp\Exception\GuzzleException
      */
     public function update(string $id, Contact $contact): Contact
     {
@@ -66,7 +66,7 @@ class ContactManager extends Http
      * @param string $id
      * @param bool $active
      * @return Contact
-     * @throws RazorPayException
+     * @throws RazorPayException|\GuzzleHttp\Exception\GuzzleException
      */
     public function changeStatus(string $id, bool $active): Contact
     {
@@ -83,7 +83,7 @@ class ContactManager extends Http
      * @see https://razorpay.com/docs/razorpayx/api/contacts/#fetch-a-contact-by-id
      * @param string $contactId
      * @return Contact
-     * @throws RazorPayException
+     * @throws RazorPayException|\GuzzleHttp\Exception\GuzzleException
      */
     public function find(string $contactId): Contact
     {
@@ -100,7 +100,7 @@ class ContactManager extends Http
      * @see https://razorpay.com/docs/razorpayx/api/contacts/#fetch-all-contacts
      * @param Contact|null $contact
      * @return ContactCollection
-     * @throws RazorPayException
+     * @throws RazorPayException|\GuzzleHttp\Exception\GuzzleException
      */
     public function fetch(Contact $contact = null): ContactCollection
     {

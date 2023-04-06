@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * *
  *  *  * Copyright (C) OPTIMO TECHNOLOGIES  - All Rights Reserved
  *  *  * Unauthorized copying of this file, via any medium is strictly prohibited
@@ -26,24 +26,13 @@ use Psr\Http\Message\StreamInterface;
 abstract class Http
 {
     /**
-     * @var Client
-     */
-    protected Client $client;
-
-    /**
-     * @var JsonMapperInterface
-     */
-    protected JsonMapperInterface $jsonMapper;
-
-    /**
      * Http constructor.
      * @param Client $client
      * @param JsonMapperInterface $jsonMapper
      */
-    public function __construct(Client $client, JsonMapperInterface $jsonMapper)
+    public function __construct(protected Client $client,   protected JsonMapperInterface $jsonMapper)
     {
-        $this->client = $client;
-        $this->jsonMapper = $jsonMapper;
+
     }
 
     /**
@@ -55,7 +44,7 @@ abstract class Http
     protected function get(string $endPoint, array $queryParams = []): StreamInterface
     {
         try {
-            return $this->client->get(RazorPayXAPI::PROD_API . $endPoint, [
+            return $this->client->get(RazorPayXAPI::PROD_API->value . $endPoint, [
                 'query' => $queryParams,
                 RequestOptions::HEADERS => ['Content-Type' => 'application/json'],
                 RequestOptions::AUTH => [config('razorpay-x.key_id'), config('razorpay-x.key_secret')],
@@ -74,7 +63,7 @@ abstract class Http
     protected function post(string $endPoint, array $params): StreamInterface
     {
         try {
-            return $this->client->post(RazorPayXAPI::PROD_API . $endPoint, [
+            return $this->client->post(RazorPayXAPI::PROD_API->value . $endPoint, [
                 RequestOptions::HEADERS => ['Content-Type' => 'application/json'],
                 RequestOptions::AUTH => [config('razorpay-x.key_id'), config('razorpay-x.key_secret')],
                 RequestOptions::JSON => $params,
@@ -93,7 +82,7 @@ abstract class Http
     protected function patch(string $endPoint, array $params): StreamInterface
     {
         try {
-            return $this->client->patch(RazorPayXAPI::PROD_API . $endPoint, [
+            return $this->client->patch(RazorPayXAPI::PROD_API->value . $endPoint, [
                 RequestOptions::HEADERS => ['Content-Type' => 'application/json'],
                 RequestOptions::AUTH => [config('razorpay-x.key_id'), config('razorpay-x.key_secret')],
                 RequestOptions::JSON => $params,

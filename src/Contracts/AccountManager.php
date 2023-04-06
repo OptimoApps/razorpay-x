@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * *
  *  *  * Copyright (C) OPTIMO TECHNOLOGIES  - All Rights Reserved
  *  *  * Unauthorized copying of this file, via any medium is strictly prohibited
@@ -33,7 +33,7 @@ class AccountManager extends Http
      *
      * @param Account $account
      * @return Account
-     * @throws RazorPayException
+     * @throws RazorPayException|\GuzzleHttp\Exception\GuzzleException
      */
     public function create(Account $account): Account
     {
@@ -52,7 +52,7 @@ class AccountManager extends Http
      * @param string $accountId
      * @param bool $active
      * @return Account
-     * @throws RazorPayException
+     * @throws RazorPayException|\GuzzleHttp\Exception\GuzzleException
      */
     public function changeStatus(string $accountId, bool $active): Account
     {
@@ -90,6 +90,7 @@ class AccountManager extends Http
      * @param string $id
      * @return Account
      * @throws RazorPayException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function find(string $id): Account
     {
